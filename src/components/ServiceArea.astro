@@ -1,0 +1,61 @@
+---
+// Service Area Component matching design specification
+import { Icon } from "@iconify/react";
+import CtaButton from "./CtaButton.astro";
+
+const serviceAreaColumns = [
+  ["Cimahi", "Lembang", "Kota Bandung", "Bandung Barat"],
+  ["Soreang", "Padalarang", "Dan Sekitarnya"],
+];
+---
+
+<!-- Card Container with Location BG Image & Red Neon Glow Border -->
+<div
+  class="relative rounded-lg sm:rounded-lg bg-cover bg-center bg-no-repeat border border-red-600/80 px-4 py-6 shadow-[0_0_30px_rgba(220,38,38,0.4)] backdrop-blur-xl overflow-hidden flex flex-col justify-between h-full"
+  style="background-image: url('/images/location_bg.png');"
+>
+  <!-- Red ambient flare backgrounds & dark overlay -->
+  <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+  <div class="absolute bottom-20 right-20 w-56 h-56 bg-red-600/20 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.25),transparent_40%)] pointer-events-none rounded-lg"></div>
+
+  <!-- Content Top Section -->
+  <div class="relative z-10 flex flex-col min-w-[450px] px-2">
+    <!-- Section Title -->
+    <div class="mb-5">
+      <h2
+        id="cara-booking-title"
+        class="font-oswald text-xl xl:text-3xl font-medium italic uppercase tracking-wider text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+      >
+        Area Layanan
+      </h2>
+    </div>
+
+    <!-- Area Columns -->
+    <div class="flex flex-row gap-4">
+      {serviceAreaColumns.map((column) => (
+        <div class="flex flex-col gap-1">
+          {column.map((area) => (
+            <div class="flex flex-row gap-2 text-white">
+              <Icon
+                icon="griddy-icons:check-circle-alt-01"
+                className="size-4 shrink-0"
+                client:load
+              />
+              <span class="text-[14px]">{area}</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Content Bottom Section (CTA) -->
+  <div class="relative z-10 px-2 mt-4 w-fit">
+    <CtaButton
+      href="#layanan"
+      text="Lihat Area Lengkap"
+      class="!mt-0 justify-start"
+    />
+  </div>
+</div>

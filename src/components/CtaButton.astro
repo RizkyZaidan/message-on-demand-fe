@@ -1,0 +1,29 @@
+---
+interface Props {
+  href?: string;
+  text?: string;
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+
+const {
+  href = "#layanan",
+  text = "LIHAT SELENGKAPNYA",
+  class: className = "",
+  target,
+  rel,
+} = Astro.props;
+---
+
+  <a
+    href={href}
+    target={target}
+    rel={rel}
+    class="w-full sm:w-auto relative px-3 sm:px-6 py-2 sm:py-3 bg-gradient-to-b from-red-600 via-red-800 to-red-950 text-white rounded-md sm:rounded-xl border border-red-500/80 shadow-[0_0_18px_rgba(220,38,38,0.7)] transition-all duration-300 active:scale-95 whitespace-nowrap overflow-hidden flex items-center justify-center group"
+  >
+    <span class="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/35 via-white/10 to-transparent pointer-events-none"></span>
+    <span class="relative z-10 text-[10px] xs:text-xs sm:text-sm font-bold tracking-wider uppercase drop-shadow-sm">
+      <slot>{text}</slot>
+    </span>
+  </a>

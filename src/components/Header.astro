@@ -1,0 +1,213 @@
+---
+---
+
+<header class="w-full sticky top-0 z-50 bg-transparent text-white border-red-950/60 backdrop-blur-sm shadow-lg transition-colors duration-300">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+    <!-- Logo (Left) -->
+    <a href="/" class="flex items-center space-x-2 group shrink-0">
+      <img
+        src="/images/mod-logo-white.png"
+        alt="Message on Demand Logo"
+        class="h-14 sm:h-16 md:h-20 lg:h-22 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+      />
+    </a>
+
+    <!-- Desktop Navigation Container (Center / Right Pill Bar) -->
+    <div class="hidden xl:flex items-center space-x-3">
+      <div class="flex items-center bg-black/90 border border-red-600/40 rounded-lg px-5 py-1.5 pr-1.5 shadow-[0_0_20px_rgba(220,38,38,0.25)] space-x-4 lg:space-x-6">
+        <a
+          href="/"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          BERANDA
+        </a>
+        <a
+          href="/#features"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          LAYANAN
+        </a>
+        <a
+          href="/#pricing"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          PAKET
+        </a>
+        <a
+          href="/#promo"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          PROMO
+        </a>
+        <a
+          href="/#artikel"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          ARTIKEL
+        </a>
+        <a
+          href="/#sponsors"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          TESTIMONI
+        </a>
+        <a
+          href="/#about"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          TENTANG KAMI
+        </a>
+        <a
+          href="/#contact"
+          class="text-white hover:text-red-400 font-extrabold text-2xs lg:text-2xs tracking-widest uppercase transition-colors"
+        >
+          KONTAK
+        </a>
+
+        <!-- Booking Button -->
+        <a
+          href="https://wa.me/"
+          target="_blank"
+          rel="noreferrer"
+          class="relative ml-2 px-6 py-2 bg-gradient-to-b from-red-600 via-red-800 to-red-950 hover:from-red-500 hover:to-red-900 text-white font-extrabold text-2xs lg:text-2xs tracking-wider uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] border border-red-500/80 transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden inline-block rounded-r-md"
+          style="clip-path: polygon(14px 0%, 100% 0%, 100% 100%, 0% 100%);"
+        >
+          <span class="absolute inset-x-0 top-0 h-[48%] bg-white/20 pointer-events-none"></span>
+          <span class="relative z-10 font-black tracking-wider pl-1">
+            BOOKING SEKARANG
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div class="flex items-center xl:hidden space-x-2">
+      <button
+        id="mobile-menu-btn"
+        class="p-2 text-white hover:text-red-400 focus:outline-none"
+        type="button"
+        aria-label="Toggle Navigation"
+      >
+        <svg
+          id="menu-icon-open"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6"
+        >
+          <line x1="3" y1="6" y2="6" x2="21"></line>
+          <line x1="3" y1="12" y2="12" x2="21"></line>
+          <line x1="3" y1="18" y2="18" x2="21"></line>
+        </svg>
+        <svg
+          id="menu-icon-close"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6 hidden"
+        >
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden xl:hidden bg-black/95 text-white backdrop-blur-xl border-b border-red-900/60 px-4 pt-3 pb-6 space-y-3 transition-colors duration-300"
+  >
+    <a
+      href="/"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      BERANDA
+    </a>
+    <a
+      href="/#features"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      LAYANAN
+    </a>
+    <a
+      href="/#pricing"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      PAKET
+    </a>
+    <a
+      href="/#promo"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      PROMO
+    </a>
+    <a
+      href="/#artikel"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      ARTIKEL
+    </a>
+    <a
+      href="/#sponsors"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      TESTIMONI
+    </a>
+    <a
+      href="/#about"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      TENTANG KAMI
+    </a>
+    <a
+      href="/#contact"
+      class="mobile-link block px-3 py-2 rounded-md text-2xs font-bold tracking-widest text-white hover:text-red-400 hover:bg-red-950/30"
+    >
+      KONTAK
+    </a>
+    <a
+      href="https://wa.me/"
+      target="_blank"
+      rel="noreferrer"
+      class="relative block text-center mt-4 px-5 py-3 bg-gradient-to-b from-red-600 via-red-800 to-red-950 text-white font-extrabold text-2xs tracking-wider uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] border border-red-500/80 overflow-hidden rounded-r-md"
+      style="clip-path: polygon(14px 0%, 100% 0%, 100% 100%, 0% 100%);"
+    >
+      <span class="absolute inset-x-0 top-0 h-[48%] bg-white/20 pointer-events-none"></span>
+      <span class="relative z-10 font-black tracking-wider pl-1">
+        BOOKING SEKARANG
+      </span>
+    </a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+  const links = document.querySelectorAll('.mobile-link');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      openIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>

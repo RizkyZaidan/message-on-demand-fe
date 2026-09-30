@@ -1,0 +1,58 @@
+---
+import { ThemeInitScript } from "@starwind-ui/astro/theme";
+import Toaster from "@/components/starwind/toast/Toaster.astro";
+import "@/styles/starwind.css";
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Message on Demand",
+  description = "Message on Demand – where darkness meets the web.",
+  canonical = "https://message-on-demand.vercel.app/",
+  ogImage = "blob:https://og-playground.vercel.app/8baff750-c782-4a04-b198-7ee3dd1e1974"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Starwind UI Theme Initialization Script -->
+    <ThemeInitScript />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Message on Demand" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonical} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:site" content="https://message-on-demand.vercel.app/" />
+    <meta property="twitter:creator" content="@saurishhh" />
+  </head>
+  <body class="bg-transparent text-foreground min-h-screen transition-colors duration-300">
+    <div id="app-container">
+      <slot />
+    </div>
+    <!-- Starwind UI Toaster Component -->
+    <Toaster />
+  </body>
+</html>

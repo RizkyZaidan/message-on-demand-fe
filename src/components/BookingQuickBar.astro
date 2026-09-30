@@ -1,0 +1,381 @@
+---
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/starwind/select";
+import Input from "@/components/starwind/input/Input.astro";
+import Button from "@/components/starwind/button/Button.astro";
+import "flatpickr/dist/flatpickr.min.css";
+import "flatpickr/dist/themes/dark.css";
+import ScrollArea from "./starwind/scroll-area/ScrollArea.astro";
+
+// Option Variables
+const layananOptions = [
+  { value: "Body Massage (Pijat Badan)", label: "Body Massage (Pijat Badan)" },
+  { value: "Pijat Tradisional", label: "Pijat Tradisional" },
+  { value: "Refleksi (Reflexology)", label: "Refleksi (Reflexology)" },
+  { value: "Pijat Refleksi Kaki", label: "Pijat Refleksi Kaki" },
+  {
+    value: "Body Massage dan Totok Wajah",
+    label: "Body Massage dan Totok Wajah",
+  },
+  {
+    value: "Pijat Refleksi dan Kerokan/Kop Tradisional",
+    label: "Pijat Refleksi dan Kerokan/Kop Tradisional",
+  },
+  {
+    value: "Pijat Refleksi dan Lulur Scrub",
+    label: "Pijat Refleksi dan Lulur Scrub",
+  },
+  {
+    value: "Pijat Refleksi dan Bekam Basah/Kering",
+    label: "Pijat Refleksi dan Bekam Basah/Kering",
+  },
+  {
+    value: "Pijat Fisioterapi Keseleo dan Reposisi",
+    label: "Pijat Fisioterapi Keseleo dan Reposisi",
+  },
+];
+
+const jamOptions = [
+  { value: "00:00", label: "00:00" },
+  { value: "01:00", label: "01:00" },
+  { value: "02:00", label: "02:00" },
+  { value: "03:00", label: "03:00" },
+  { value: "04:00", label: "04:00" },
+  { value: "05:00", label: "05:00" },
+  { value: "06:00", label: "06:00" },
+  { value: "07:00", label: "07:00" },
+  { value: "08:00", label: "08:00" },
+  { value: "09:00", label: "09:00" },
+  { value: "10:00", label: "10:00" },
+  { value: "11:00", label: "11:00" },
+  { value: "12:00", label: "12:00" },
+  { value: "13:00", label: "13:00" },
+  { value: "14:00", label: "14:00" },
+  { value: "15:00", label: "15:00" },
+  { value: "16:00", label: "16:00" },
+  { value: "17:00", label: "17:00" },
+  { value: "18:00", label: "18:00" },
+  { value: "19:00", label: "19:00" },
+  { value: "20:00", label: "20:00" },
+  { value: "21:00", label: "21:00" },
+  { value: "22:00", label: "22:00" },
+  { value: "23:00", label: "23:00" },
+  { value: "24:00", label: "24:00" },
+];
+
+const terapisOptions = [
+  { value: "Terapis Pria", label: "Terapis Pria" },
+  { value: "Terapis Wanita", label: "Terapis Wanita" },
+  { value: "Terapis Terdekat (Bebas)", label: "Terapis Terdekat (Bebas)" },
+];
+---
+
+<div class="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8 my-6">
+  <div class="relative rounded-2xl bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-400/80 p-3.5 sm:p-4 shadow-[0_0_30px_rgba(220,38,38,0.45)] backdrop-blur-xl">
+    <!-- Red ambient lightning background overlay -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.3),transparent_70%)] rounded-2xl pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-3 sm:gap-4">
+      <!-- Title (TOP on Mobile & Tablet, LEFT on Desktop) -->
+      <div class="shrink-0 text-center lg:text-left px-1">
+        <h3 class="font-oswald text-xl sm:text-2xl font-black italic uppercase tracking-wider text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pr-2 py-0.5 inline-block whitespace-nowrap">
+          BOOKING CEPAT
+        </h3>
+      </div>
+
+      <!-- Quick Booking Form Grid (MIDDLE: 2-col on mobile & tablet with Tanggal & Jam paired, 4-col on desktop) -->
+      <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+        <!-- Field 1: Pilih Layanan -->
+        <div class="col-span-2 lg:col-span-1 relative min-w-0">
+          <label for="select-layanan" class="sr-only">
+            Pilih Layanan
+          </label>
+          <div
+            id="wrapper-layanan"
+            class="h-10 sm:h-11 lg:h-12 flex items-center gap-2 bg-black/90 border border-red-800/80 hover:border-amber-500/80 focus-within:border-amber-500 rounded-xl px-3 shadow-[0_0_12px_rgba(0,0,0,0.6)] transition-all cursor-pointer group min-w-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-amber-400 shrink-0"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+            >
+              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z" />
+            </svg>
+            <Select name="layanan" id="select-layanan" class="w-full min-w-0">
+              <SelectTrigger
+                placeholder="Pilih Layanan"
+                class="w-full bg-transparent border-none text-gray-100 text-xs font-bold focus:ring-0 shadow-none px-0 py-0 h-auto min-w-0 overflow-hidden text-ellipsis whitespace-nowrap"
+              >
+                <SelectValue placeholder="Pilih Layanan" />
+              </SelectTrigger>
+              <SelectContent class="z-[9999] bg-black/95 border border-red-800/90 rounded-xl shadow-[0_10px_35px_rgba(0,0,0,0.95)] backdrop-blur-2xl p-1 text-gray-100 min-w-[220px]">
+                {layananOptions.map((opt) => (
+                  <SelectItem
+                    value={opt.value}
+                    class="text-xs py-2 px-3 rounded-lg hover:bg-red-950 focus:bg-red-900 text-gray-200 cursor-pointer font-medium transition-colors"
+                  >
+                    {opt.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <!-- Field 2: Tanggal (Flatpickr Input) -->
+        <div class="col-span-1 relative min-w-0">
+          <label for="select-tanggal" class="sr-only">
+            Tanggal
+          </label>
+          <div
+            id="wrapper-tanggal"
+            class="h-10 sm:h-11 lg:h-12 flex items-center gap-1.5 sm:gap-2 bg-black/90 border border-red-800/80 hover:border-amber-500/80 focus-within:border-amber-500 rounded-xl px-2.5 sm:px-3 shadow-[0_0_12px_rgba(0,0,0,0.6)] transition-all cursor-pointer group min-w-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-amber-400 shrink-0"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+            >
+              <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z" />
+            </svg>
+            <Input
+              type="text"
+              id="select-tanggal"
+              placeholder="Pilih Tanggal"
+              class="w-full bg-transparent border-none text-gray-100 text-xs font-bold focus:ring-0 shadow-none px-0 py-0 h-auto cursor-pointer placeholder:text-gray-400 min-w-0 overflow-hidden text-ellipsis whitespace-nowrap"
+            />
+          </div>
+        </div>
+
+        <!-- Field 3: Jam -->
+        <div class="col-span-1 relative min-w-0">
+          <label for="select-jam" class="sr-only">
+            Jam
+          </label>
+          <div
+            id="wrapper-jam"
+            class="h-10 sm:h-11 lg:h-12 flex items-center gap-1.5 sm:gap-2 bg-black/90 border border-red-800/80 hover:border-amber-500/80 focus-within:border-amber-500 rounded-xl px-2.5 sm:px-3 shadow-[0_0_12px_rgba(0,0,0,0.6)] transition-all cursor-pointer group min-w-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-amber-400 shrink-0"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+            >
+              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z" />
+            </svg>
+            <Select name="jam" id="select-jam" class="w-full min-w-0">
+              <SelectTrigger
+                placeholder="Jam"
+                class="w-full bg-transparent border-none text-gray-100 text-xs font-bold focus:ring-0 shadow-none px-0 py-0 h-auto min-w-0 overflow-hidden text-ellipsis whitespace-nowrap"
+              >
+                <SelectValue placeholder="Jam" />
+              </SelectTrigger>
+              <SelectContent class="z-[9999] bg-black/95 border border-red-800/90 rounded-xl shadow-[0_10px_35px_rgba(0,0,0,0.95)] backdrop-blur-2xl p-1 text-gray-100">
+                <ScrollArea class="h-36 min-w-[140px] rounded-md border-none">
+                  {jamOptions.map((opt) => (
+                    <SelectItem
+                      value={opt.value}
+                      class="text-xs py-2 px-3 rounded-lg hover:bg-red-950 focus:bg-red-900 text-gray-200 cursor-pointer font-medium transition-colors"
+                    >
+                      {opt.label}
+                    </SelectItem>
+                  ))}
+                </ScrollArea>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <!-- Field 4: Pilih Terapis -->
+        <div class="col-span-2 lg:col-span-1 relative min-w-0">
+          <label for="select-terapis" class="sr-only">
+            Pilih Terapis
+          </label>
+          <div
+            id="wrapper-terapis"
+            class="h-10 sm:h-11 lg:h-12 flex items-center gap-2 bg-black/90 border border-red-800/80 hover:border-amber-500/80 focus-within:border-amber-500 rounded-xl px-3 shadow-[0_0_12px_rgba(0,0,0,0.6)] transition-all cursor-pointer group min-w-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-amber-400 shrink-0"
+              viewBox="0 0 256 256"
+              fill="currentColor"
+            >
+              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z" />
+            </svg>
+            <Select name="terapis" id="select-terapis" class="w-full min-w-0">
+              <SelectTrigger
+                placeholder="Pilih Terapis"
+                class="w-full bg-transparent border-none text-gray-100 text-xs font-bold focus:ring-0 shadow-none px-0 py-0 h-auto min-w-0 overflow-hidden text-ellipsis whitespace-nowrap"
+              >
+                <SelectValue placeholder="Pilih Terapis" />
+              </SelectTrigger>
+              <SelectContent class="z-[9999] bg-black/95 border border-red-800/90 rounded-xl shadow-[0_10px_35px_rgba(0,0,0,0.95)] backdrop-blur-2xl p-1 text-gray-100 min-w-[200px]">
+                {terapisOptions.map((opt) => (
+                  <SelectItem
+                    value={opt.value}
+                    class="text-xs py-2 px-3 rounded-lg hover:bg-red-950 focus:bg-red-900 text-gray-200 cursor-pointer font-medium transition-colors"
+                  >
+                    {opt.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button (BOTTOM on Mobile & Tablet: w-full, RIGHT on Desktop: lg:w-auto) -->
+      <Button
+        id="quick-booking-btn"
+        type="button"
+        as="button"
+        class="w-full lg:w-auto h-11 lg:h-12 relative px-6 bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-500 hover:from-amber-200 hover:to-amber-400 text-black font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-[0_0_20px_rgba(234,179,8,0.55)] border border-amber-300/80 transition-all duration-300 transform hover:scale-[1.03] active:scale-95 whitespace-nowrap overflow-hidden flex items-center justify-center shrink-0 cursor-pointer"
+      >
+        <span class="absolute inset-x-0 top-0 h-[45%] bg-white/40 pointer-events-none"></span>
+        <span class="relative z-10 font-black tracking-wider text-black">
+          BOOKING SEKARANG
+        </span>
+      </Button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import flatpickr from "flatpickr";
+  import { z } from "zod";
+  import { toast } from "@/components/starwind/toast";
+
+  // Initialize Flatpickr date picker
+  flatpickr("#select-tanggal", {
+    dateFormat: "d M Y",
+    defaultDate: "today",
+    minDate: "today",
+    disableMobile: true,
+  });
+
+  // Zod Validation Schema
+  const bookingSchema = z.object({
+    layanan: z.string().trim().min(1, { message: "Layanan wajib dipilih" }),
+    tanggal: z.string().trim().min(1, { message: "Tanggal wajib dipilih" }),
+    jam: z.string().trim().min(1, { message: "Jam wajib dipilih" }),
+    terapis: z.string().trim().min(1, { message: "Terapis wajib dipilih" }),
+  });
+
+  const btn = document.getElementById("quick-booking-btn");
+
+  const fieldWrappers: Record<string, HTMLElement | null> = {
+    layanan: document.getElementById("wrapper-layanan"),
+    tanggal: document.getElementById("wrapper-tanggal"),
+    jam: document.getElementById("wrapper-jam"),
+    terapis: document.getElementById("wrapper-terapis"),
+  };
+
+  function clearErrorStyles() {
+    Object.values(fieldWrappers).forEach((wrapper) => {
+      if (wrapper) {
+        wrapper.classList.remove(
+          "border-red-500",
+          "ring-2",
+          "ring-red-500/80",
+          "animate-pulse",
+        );
+        wrapper.classList.add("border-red-800/80");
+      }
+    });
+  }
+
+  btn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const selLayanan = document.querySelector(
+      'input[name="layanan"]',
+    ) as HTMLInputElement | null;
+    const selTanggal = document.getElementById(
+      "select-tanggal",
+    ) as HTMLInputElement | null;
+    const selJam = document.querySelector(
+      'input[name="jam"]',
+    ) as HTMLInputElement | null;
+    const selTerapis = document.querySelector(
+      'input[name="terapis"]',
+    ) as HTMLInputElement | null;
+
+    const formData = {
+      layanan: selLayanan?.value || "",
+      tanggal: selTanggal?.value || "",
+      jam: selJam?.value || "",
+      terapis: selTerapis?.value || "",
+    };
+
+    clearErrorStyles();
+
+    const result = bookingSchema.safeParse(formData);
+
+    if (!result.success) {
+      const formattedErrors = result.error.format();
+      const missingFields: string[] = [];
+
+      if (formattedErrors.layanan?._errors.length) {
+        missingFields.push("Pilih Layanan");
+        fieldWrappers.layanan?.classList.add(
+          "border-red-500",
+          "ring-2",
+          "ring-red-500/80",
+          "animate-pulse",
+        );
+      }
+      if (formattedErrors.tanggal?._errors.length) {
+        missingFields.push("Pilih Tanggal");
+        fieldWrappers.tanggal?.classList.add(
+          "border-red-500",
+          "ring-2",
+          "ring-red-500/80",
+          "animate-pulse",
+        );
+      }
+      if (formattedErrors.jam?._errors.length) {
+        missingFields.push("Pilih Jam");
+        fieldWrappers.jam?.classList.add(
+          "border-red-500",
+          "ring-2",
+          "ring-red-500/80",
+          "animate-pulse",
+        );
+      }
+      if (formattedErrors.terapis?._errors.length) {
+        missingFields.push("Pilih Terapis");
+        fieldWrappers.terapis?.classList.add(
+          "border-red-500",
+          "ring-2",
+          "ring-red-500/80",
+          "animate-pulse",
+        );
+      }
+
+      toast.error("Booking Belum Lengkap", {
+        description: `Mohon lengkapi data berikut: ${missingFields.join(", ")}`,
+      });
+      return;
+    }
+
+    // If valid, show success toast and open WhatsApp with encoded message
+    const { layanan, tanggal, jam, terapis } = result.data;
+
+    toast.success("Melanjutkan ke WhatsApp...", {
+      description: "Format booking berhasil dibuat.",
+    });
+
+    const msg = `Halo, saya mau booking quick service:\n- Layanan: ${layanan}\n- Tanggal: ${tanggal}\n- Jam: ${jam}\n- Terapis: ${terapis}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+  });
+</script>

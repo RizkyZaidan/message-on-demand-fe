@@ -1,0 +1,117 @@
+---
+// Cara Booking Steps Component matching design specification
+import { Icon } from "@iconify/react";
+
+interface BookingStepItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const bookingSteps: BookingStepItem[] = [
+  {
+    id: 1,
+    title: "PILIH LAYANAN",
+    description: "Pilih layanan terapi<br> serta durasi",
+    icon: "/images/custom-icons/clipboard-icon.svg",
+  },
+  {
+    id: 2,
+    title: "ISI ALAMAT",
+    description: "Lengkapi alamat dan <br> detail lokasi",
+    icon: "/images/custom-icons/location-icon.svg",
+  },
+  {
+    id: 3,
+    title: "PILIH JADWAL",
+    description: "Pilih tanggal dan <br> jam tersedia",
+    icon: "/images/custom-icons/calendar-icon.svg",
+  },
+  {
+    id: 4,
+    title: "TERAPIS DATANG",
+    description: "Terapis profesional siap melayani Anda",
+    icon: "/images/custom-icons/profile-icon.svg",
+  },
+  {
+    id: 5,
+    title: "BAYAR",
+    description: "Pembayaran mudah dan<br> aman.",
+    icon: "/images/custom-icons/tape-icon.svg",
+  },
+];
+---
+
+<!-- Card Container with Red Neon Glow Border -->
+<div class="relative rounded-lg sm:rounded-lg bg-gradient-to-br from-[#180303]/95 via-[#0a0101]/95 to-[#160202]/95 border border-red-600/80 px-4 py-6 shadow-[0_0_30px_rgba(220,38,38,0.4)] backdrop-blur-xl overflow-hidden h-full flex flex-col justify-between">
+  <!-- Red ambient flare backgrounds -->
+  <div class="absolute -top-20 -left-20 w-56 h-56 bg-red-600/30 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute -bottom-20 -right-20 w-56 h-56 bg-red-600/20 blur-3xl rounded-full pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.25),transparent_40%)] pointer-events-none rounded-lg"></div>
+
+  <!-- Section Title -->
+  <div class="relative z-10 mb-3 px-2">
+    <h2
+      id="cara-booking-title"
+      class="font-oswald text-xl xl:text-3xl font-medium italic uppercase tracking-wider text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+    >
+      CARA BOOKING
+    </h2>
+  </div>
+
+  <!-- Steps Grid / Flex Flow -->
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-1 md:gap-2 xl:gap-1">
+    {bookingSteps.map((step, index) => (
+      <>
+        <!-- Step Item -->
+        <div class="flex flex-col items-center text-center flex-1 min-w-0 group w-full md:w-auto">
+          <div class="relative mb-3.5 sm:mb-4 flex items-center justify-center">
+            <!-- Red ambient back-glow matching mockup -->
+            <div class="absolute inset-0 rounded-full bg-white/10 blur-md scale-95 group-hover:blur-lg transition-all duration-300"></div>
+            <!-- Custom Circle Emblem SVG -->
+            <img
+              src={step.icon}
+              alt={step.title}
+              class="relative z-10 size-16 sm:size-20 lg:size-24 xl:size-24 object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_14px_rgba(220,38,38,0.5)]"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="font-oswald font-semibold uppercase tracking-wider xl:text-[12px] text-white leading-tight">
+            {step.title}
+          </h3>
+          <p
+            class="font-alegreya xl:text-[11px] text-zinc-300 leading-snug mt-1 text-center"
+            set:html={step.description}
+          />
+        </div>
+
+        <!-- Divider Arrow Between Steps -->
+        {index < bookingSteps.length - 1 && (
+          <>
+            <!-- Desktop Arrow: w-0 shrink-0 so it has zero width in the flex gap calculation -->
+            <div
+              class="hidden md:flex w-0 shrink-0 items-center justify-center text-zinc-300/80 self-center -mt-10 lg:-mt-12 overflow-visible pointer-events-none"
+              aria-hidden="true"
+            >
+              <Icon
+                icon="lucide:arrow-right"
+                className="size-5 lg:size-6 text-zinc-300 shrink-0"
+                client:load
+              />
+            </div>
+
+            <!-- Mobile Down Arrow Divider -->
+            <div class="flex md:hidden text-zinc-400 my-0.5" aria-hidden="true">
+              <Icon
+                icon="lucide:arrow-down"
+                className="size-4 text-zinc-400"
+                client:load
+              />
+            </div>
+          </>
+        )}
+      </>
+    ))}
+  </div>
+</div>

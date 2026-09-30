@@ -1,0 +1,490 @@
+---
+import { Icon } from "@iconify/react";
+import CtaButton from "./CtaButton.astro";
+---
+
+<section class="relative overflow-hidden pt-3 sm:pt-6 pb-2 sm:pb-12 lg:pt-16 lg:pb-16 min-h-0 sm:min-h-[550px]">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ================= DESKTOP LAYOUT (>= xl: 1280px) ================= -->
+    <div class="hidden xl:flex flex-col xl:flex-row items-center xl:items-end justify-between gap-6 sm:gap-8 relative">
+      <!-- Left Column: Heading + 4-Feature Box + Rating/CTA -->
+      <div class="w-full xl:w-[50%] space-y-4 sm:space-y-5 text-center xl:text-left z-20 flex flex-col items-center xl:items-start">
+        <!-- Heading -->
+        <div>
+          <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-none">
+            PIJAT PROFESIONAL
+          </h1>
+          <h2 class="font-oswald text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tight text-amber-400 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] mt-1 sm:whitespace-nowrap leading-tight">
+            DATANG KE RUMAH ANDA
+          </h2>
+          <p class="text-gray-200 text-xs sm:text-base italic font-medium mt-1.5">
+            Nyaman di Rumah, Sehat Setiap Hari
+          </p>
+        </div>
+
+        <!-- 4-Feature Box -->
+        <div class="relative overflow-hidden w-full xl:w-fit max-w-full xl:bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 xl:border xl:border-red-800/80 xl:rounded-xl xl:p-3.5 xl:shadow-[0_0_20px_rgba(220,38,38,0.25)] xl:backdrop-blur-md">
+          <!-- Red ambient flare backgrounds -->
+          <div class="absolute bottom-20 right-20 w-56 h-56 bg-red-600/20 blur-3xl rounded-full pointer-events-none"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.25),transparent_40%)] pointer-events-none rounded-xl"></div>
+
+          <div class="relative z-10 grid grid-cols-2 xl:grid-cols-4 gap-2.5 xl:gap-4 text-center items-stretch xl:items-center">
+            <div class="flex flex-col items-center justify-center py-3 px-2 xl:py-2 xl:px-3 rounded-xl xl:rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_15px_rgba(220,38,38,0.25)] backdrop-blur-md xl:bg-transparent xl:border-none xl:shadow-none xl:backdrop-blur-none transition-transform hover:scale-[1.02] xl:hover:scale-100">
+              <div class="flex items-center justify-center mb-2 xl:mb-3">
+                <img
+                  src="/images/trusted.svg"
+                  alt="Trusted"
+                  class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 lg:w-24 lg:h-24 object-contain"
+                />
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                Terapis <br /> Bersertifikat
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center py-3 px-2 xl:py-2 xl:px-3 rounded-xl xl:rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_15px_rgba(220,38,38,0.25)] backdrop-blur-md xl:bg-transparent xl:border-none xl:shadow-none xl:backdrop-blur-none transition-transform hover:scale-[1.02] xl:hover:scale-100">
+              <div class="flex items-center justify-center mb-2 xl:mb-3">
+                <img
+                  src="/images/on-time.svg"
+                  alt="On Time"
+                  class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 lg:w-24 lg:h-24 object-contain"
+                />
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                Datang Cepat <br /> Maks. 60 Menit
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center py-3 px-2 xl:py-2 xl:px-3 rounded-xl xl:rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_15px_rgba(220,38,38,0.25)] backdrop-blur-md xl:bg-transparent xl:border-none xl:shadow-none xl:backdrop-blur-none transition-transform hover:scale-[1.02] xl:hover:scale-100">
+              <div class="flex items-center justify-center mb-2 xl:mb-3">
+                <img
+                  src="/images/hygine.svg"
+                  alt="Hygine"
+                  class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 lg:w-24 lg:h-24 object-contain"
+                />
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                Higienis <br /> & Aman
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center py-3 px-2 xl:py-2 xl:px-3 rounded-xl xl:rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_15px_rgba(220,38,38,0.25)] backdrop-blur-md xl:bg-transparent xl:border-none xl:shadow-none xl:backdrop-blur-none transition-transform hover:scale-[1.02] xl:hover:scale-100">
+              <div class="flex items-center justify-center mb-2 xl:mb-3">
+                <img
+                  src="/images/affordable.svg"
+                  alt="Affordable"
+                  class="w-14 h-14 sm:w-16 sm:h-16 xl:w-20 xl:h-20 lg:w-24 lg:h-24 object-contain"
+                />
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                Harga <br /> Transparan
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating + Button Row -->
+        <div class="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-3 pt-1 w-full sm:w-fit">
+          <!-- Rating Box -->
+          <div class="w-full sm:w-auto flex items-center justify-center bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-700/60 rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 shadow-[0_0_15px_rgba(185,28,28,0.35)] backdrop-blur-md space-x-3 sm:space-x-4">
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
+              <div class="flex text-amber-400 text-sm sm:text-lg tracking-tight">
+                ★★★★★
+              </div>
+              <span class="text-white font-black text-sm sm:text-lg tracking-tight font-sans">
+                4.9/5
+              </span>
+            </div>
+
+            <div class="h-7 sm:h-8 w-[1px] bg-red-900/80 my-auto"></div>
+
+            <div class="text-left leading-tight space-y-0.5">
+              <span class="text-white font-bold text-xs sm:text-sm block tracking-tight">
+                500+ Review
+              </span>
+              <span class="text-gray-300 text-[10px] sm:text-xs block tracking-tight">
+                Google Reviews
+              </span>
+            </div>
+          </div>
+
+          <!-- Red Glossy CTA Button -->
+          <CtaButton href="#layanan" text="Lihat Paket Layanan" />
+        </div>
+      </div>
+
+      <!-- Center/Right Prominent Therapist Illustration -->
+      <div class="hidden xl:flex w-full xl:w-[50%] flex-col items-center justify-end relative z-10 mt-2 xl:mt-0">
+        <div class="relative w-full max-w-3xl xl:max-w-4xl transform scale-110 xl:scale-120 xl:-translate-x-16 origin-bottom">
+          <img
+            src="/images/therapist-illust.png"
+            alt="Terapis Pijat Profesional"
+            class="w-full h-auto object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.95)]"
+          />
+        </div>
+
+        <!-- Right Floating / Side Info Box Overlay -->
+        <div class="absolute right-0 bottom-0 z-20 w-[240px]">
+          <div class="bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 rounded-lg p-4 space-y-3.5 shadow-[0_0_25px_rgba(220,38,38,0.35)] backdrop-blur-md">
+            <div class="flex items-center space-x-3 pb-2.5 border-b border-red-900/50">
+              <div class="w-9 h-9 rounded-full border border-red-500/70 bg-red-950/90 flex items-center justify-center shrink-0 text-white">
+                <Icon icon="ph:clock-bold" className="w-5 h-5" client:load />
+              </div>
+              <div>
+                <h4 class="text-[11px] font-semibold uppercase text-white tracking-wider">
+                  BUKA SETIAP HARI
+                </h4>
+                <p class="text-[10px] text-gray-300 font-medium">
+                  08.00 - 23.00 WIB
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-9 h-9 rounded-full border border-red-500/70 bg-red-950/90 flex items-center justify-center shrink-0 text-white">
+                <Icon
+                  icon="ph:calendar-check-bold"
+                  className="w-5 h-5"
+                  client:load
+                />
+              </div>
+              <div>
+                <h4 class="text-[11px] font-semibold uppercase text-white tracking-wider">
+                  BOOKING MUDAH
+                </h4>
+                <p class="text-[10px] text-gray-300 font-medium">
+                  24 JAM ONLINE
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center gap-2 w-full bg-gradient-to-r from-emerald-800 via-green-800 to-emerald-900 hover:from-emerald-700 hover:to-green-700 text-white p-2.5 rounded-xl shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:scale-[1.02] active:scale-95 group"
+            >
+              <Icon
+                icon="akar-icons:whatsapp-fill"
+                className="w-6 h-6 text-white shrink-0 group-hover:scale-110 transition-transform ml-1"
+                client:load
+              />
+              <div class="text-left">
+                <h4 class="text-[11px] font-semibold uppercase text-white tracking-wider">
+                  CHAT WHATSAPP
+                </h4>
+                <p class="text-[10px] text-green-200 font-medium">
+                  KAMI ONLINE
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MOBILE & TABLET LAYOUT (< xl: 1280px) ================= -->
+    <div class="flex flex-col xl:hidden w-full space-y-4 sm:space-y-6">
+      <!-- 1. TABLET SPECIFIC LAYOUT (600px - 1024px / sm to xl) -->
+      <div class="hidden sm:flex flex-col gap-5 w-full">
+        <!-- Mid Section: Left Column (Text Header + Horizontal Badges) + Right Column (Enlarged Illustration) -->
+        <div class="flex flex-row items-center justify-between gap-6 w-full pt-2">
+          <!-- Left Column: Header Text + 4 Horizontal Badges -->
+          <div class="flex flex-col gap-4 w-[55%] tb:w-[52%] shrink-0 text-left">
+            <!-- Header Text -->
+            <div class="flex flex-col">
+              <h1 class="font-oswald text-3xl sm:text-4xl tb:text-5xl font-bold uppercase tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-none">
+                PIJAT PROFESIONAL
+              </h1>
+              <h2 class="font-oswald text-2xl sm:text-3xl tb:text-4xl font-bold uppercase tracking-tight text-amber-400 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] mt-1.5 leading-tight">
+                DATANG KE RUMAH ANDA
+              </h2>
+              <p class="text-gray-200 text-xs sm:text-sm italic font-medium mt-1">
+                Nyaman di Rumah, Sehat Setiap Hari
+              </p>
+            </div>
+
+            <!-- 4 Badges Row (Horizontal Flex) -->
+            <div class="grid grid-cols-2 gap-2 w-full pt-1">
+              <div class="flex items-center gap-2 p-1.5 sm:p-2 rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md">
+                <img
+                  src="/images/trusted.svg"
+                  alt="Trusted"
+                  class="w-7 h-7 sm:w-8 sm:h-8 shrink-0 object-contain"
+                />
+                <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                  Terapis <br /> Bersertifikat
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2 p-1.5 sm:p-2 rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md">
+                <img
+                  src="/images/on-time.svg"
+                  alt="On Time"
+                  class="w-7 h-7 sm:w-8 sm:h-8 shrink-0 object-contain"
+                />
+                <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                  Datang Cepat <br /> Maks. 60 Mnt
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2 p-1.5 sm:p-2 rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md">
+                <img
+                  src="/images/hygine.svg"
+                  alt="Hygine"
+                  class="w-7 h-7 sm:w-8 sm:h-8 shrink-0 object-contain"
+                />
+                <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                  Higienis <br /> & Aman
+                </span>
+              </div>
+
+              <div class="flex items-center gap-2 p-1.5 sm:p-2 rounded-lg bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md">
+                <img
+                  src="/images/affordable.svg"
+                  alt="Affordable"
+                  class="w-7 h-7 sm:w-8 sm:h-8 shrink-0 object-contain"
+                />
+                <span class="text-[10px] sm:text-xs font-bold text-white tracking-wide leading-tight">
+                  Harga <br /> Transparan
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Enlarged Therapist Illustration -->
+          <div class="w-[45%] tb:w-[48%] flex justify-end items-end relative shrink-0">
+            <img
+              src="/images/therapist-illust.png"
+              alt="Terapis Pijat Profesional"
+              class="w-full h-auto max-h-[360px] sm:max-h-[440px] tb:max-h-[500px] object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.95)]"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. MOBILE SPECIFIC LAYOUT (< 600px / < sm) -->
+      <div class="flex flex-col sm:hidden w-full">
+        <!-- Mid Section: Left Vertical Pill Badges + Right Column (Title Top -> Image z-10 -> Subtitle Bottom z-20) -->
+        <div class="flex flex-row items-center justify-between gap-2.5 w-full pt-1">
+          <!-- Left Column: 4 Vertical Feature Badges -->
+          <div class="flex flex-col gap-1.5 w-fit shrink-0">
+            <div class="flex items-center gap-1.5 p-1 rounded-md bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md !pr-2.5">
+              <img
+                src="/images/trusted.svg"
+                alt="Trusted"
+                class="w-5 h-5 xs:w-6 xs:h-6 shrink-0 object-contain"
+              />
+              <span class="text-[7.5px] xs:text-[8px] font-bold text-white tracking-wide leading-tight">
+                Terapis <br /> Bersertifikat
+              </span>
+            </div>
+
+            <div class="flex items-center gap-1.5 p-1 rounded-md bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md !pr-2.5">
+              <img
+                src="/images/on-time.svg"
+                alt="On Time"
+                class="w-5 h-5 xs:w-6 xs:h-6 shrink-0 object-contain"
+              />
+              <span class="text-[7.5px] xs:text-[8px] font-bold text-white tracking-wide leading-tight">
+                Datang Cepat <br /> Maks. 60 Mnt
+              </span>
+            </div>
+
+            <div class="flex items-center gap-1.5 p-1 rounded-md bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md !pr-2.5">
+              <img
+                src="/images/hygine.svg"
+                alt="Hygine"
+                class="w-5 h-5 xs:w-6 xs:h-6 shrink-0 object-contain"
+              />
+              <span class="text-[7.5px] xs:text-[8px] font-bold text-white tracking-wide leading-tight">
+                Higienis <br /> & Aman
+              </span>
+            </div>
+
+            <div class="flex items-center gap-1.5 p-1 rounded-md bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 shadow-[0_0_12px_rgba(220,38,38,0.25)] backdrop-blur-md !pr-2.5">
+              <img
+                src="/images/affordable.svg"
+                alt="Affordable"
+                class="w-5 h-5 xs:w-6 xs:h-6 shrink-0 object-contain"
+              />
+              <span class="text-[7.5px] xs:text-[8px] font-bold text-white tracking-wide leading-tight">
+                Harga <br /> Transparan
+              </span>
+            </div>
+          </div>
+
+          <!-- Right Column: Top Title -> Therapist Image -> Bottom Title -->
+          <div class="w-[63%] flex flex-col items-center text-center justify-center relative shrink-0">
+            <!-- Top Title (PIJAT PROFESIONAL) -->
+            <div class="absolute z-20 -top-1 xs:-top-2 right-0 flex flex-col items-end">
+              <h1 class="font-oswald text-[20px] xs:text-2xl mobile-lg:text-3xl font-bold uppercase tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-none z-20 relative !text-right">
+                PIJAT PROFESIONAL
+              </h1>
+            </div>
+
+            <!-- Middle Therapist Illustration -->
+            <div class="relative w-full flex justify-end z-10 my-0.5 -right-3 xs:-right-4">
+              <img
+                src="/images/therapist-illust.png"
+                alt="Terapis Pijat Profesional"
+                class="w-full h-full max-h-[220px] xs:max-h-[260px] object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.95)]"
+              />
+            </div>
+
+            <div class="absolute z-20 -bottom-4 xs:-bottom-5 right-0 flex flex-col items-end">
+              <!-- Bottom Title (DATANG KE RUMAH ANDA) & Subtitle -->
+              <h2 class="font-oswald text-[15px] xs:text-lg mobile-lg:text-xl font-bold uppercase tracking-tight text-amber-400 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-tight z-20 relative !text-right">
+                DATANG KE RUMAH ANDA
+              </h2>
+              <p class="text-gray-200 text-[9.5px] xs:text-[11px] italic font-medium mt-0.5 z-20 relative !text-right">
+                Nyaman di Rumah, Sehat Setiap Hari
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. COMMON BOTTOM INFO & CTA SECTION (< xl: 1280px) -->
+      <div class="relative flex flex-col gap-2.5 sm:gap-3 w-full mt-4 sm:mt-6 -top-8 xs:-top-6">
+        <!-- Bottom Row: Rating Box & CTA Button -->
+        <div class="flex flex-row items-end justify-between gap-2 sm:gap-3 w-full">
+          <!-- Rating Box -->
+          <div class="flex flex-col items-center justify-center gap-1 bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-700/60 rounded-md sm:rounded-xl px-2.5 sm:px-4 py-1 sm:py-2 shadow-[0_0_15px_rgba(185,28,28,0.35)] backdrop-blur-md">
+            <div class="flex items-center gap-1 sm:gap-2">
+              <span class="text-amber-400 text-[11px] xs:text-xs sm:text-sm tracking-tight">
+                ★★★★★
+              </span>
+              <span class="text-white font-black text-[10px] xs:text-xs sm:text-sm font-sans">
+                4.9/5
+              </span>
+            </div>
+            <div class="h-px w-full bg-red-900/80"></div>
+            <div class="flex items-center gap-1.5 sm:gap-2 leading-tight">
+              <span class="text-white font-bold text-[9px] xs:text-[10px] sm:text-xs">
+                500+ Review
+              </span>
+              <span class="text-gray-300 text-[7.5px] xs:text-[8px] sm:text-[10px]">
+                Google Reviews
+              </span>
+            </div>
+          </div>
+
+          <!-- Red Glossy CTA Button -->
+          <CtaButton href="#layanan" text="Lihat Paket & Pelayanan" />
+        </div>
+
+        <!-- Info Row Tablet: Jam Buka, Booking, WhatsApp (Only displayed on tablet resolution: sm to xl) -->
+        <div class="hidden sm:grid grid-cols-3 items-center justify-between w-full gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 rounded-md sm:rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.3)] backdrop-blur-md">
+          <div class="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+            <Icon
+              icon="ph:clock-bold"
+              className="size-3 sm:size-4 text-white shrink-0"
+              client:load
+            />
+            <div class="text-left leading-tight">
+              <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                Buka Setiap Hari
+              </h4>
+              <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-gray-300 font-medium">
+                08.00 - 23.00 WIB
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
+            <Icon
+              icon="ph:calendar-check-bold"
+              className="size-3 sm:size-4 text-white shrink-0"
+              client:load
+            />
+            <div class="text-left leading-tight">
+              <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                Booking Mudah
+              </h4>
+              <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-gray-300 font-medium">
+                24 JAM ONLINE
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noreferrer"
+            class="flex items-center justify-center gap-1 xs:gap-1.5 bg-gradient-to-r from-emerald-800 via-green-800 to-emerald-900 hover:from-emerald-700 hover:to-green-700 text-white py-1 sm:py-1.5 px-1.5 sm:px-2.5 rounded-md sm:rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300 active:scale-95 group"
+          >
+            <Icon
+              icon="akar-icons:whatsapp-fill"
+              className="size-3 sm:size-4 text-white shrink-0 group-hover:scale-110 transition-transform"
+              client:load
+            />
+            <div class="text-left leading-tight">
+              <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                Chat Whatsapp
+              </h4>
+              <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-green-200 font-medium">
+                Online Now
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- Info Row Mobile: Jam Buka, Booking, WhatsApp -->
+        <div class="grid sm:hidden grid-cols-2 grid-rows-2 gap-2">
+          <div class="flex items-center gap-2.5 w-full px-2.5 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 rounded-md sm:rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.3)] backdrop-blur-md">
+            <Icon
+              icon="ph:clock-bold"
+              className="size-3 sm:size-4 text-white shrink-0"
+              client:load
+            />
+            <div class="text-left leading-tight">
+              <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                Buka Setiap Hari
+              </h4>
+              <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-gray-300 font-medium">
+                08.00 - 23.00 WIB
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 w-full px-2.5 sm:px-3 py-1.5 sm:py-2 bg-gradient-to-bl from-red-950/90 via-black/95 to-red-950/90 border border-red-800/80 rounded-md sm:rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.3)] backdrop-blur-md">
+            <Icon
+              icon="ph:calendar-check-bold"
+              className="size-3 sm:size-4 text-white shrink-0"
+              client:load
+            />
+            <div class="text-left leading-tight">
+              <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                Booking Mudah
+              </h4>
+              <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-gray-300 font-medium">
+                24 JAM ONLINE
+              </p>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center justify-center gap-1 xs:gap-1.5 bg-gradient-to-r from-emerald-800 via-green-800 to-emerald-900 hover:from-emerald-700 hover:to-green-700 text-white py-1 sm:py-1.5 px-1.5 sm:px-2.5 rounded-md sm:rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300 active:scale-95 group"
+            >
+              <Icon
+                icon="akar-icons:whatsapp-fill"
+                className="size-3 sm:size-4 text-white shrink-0 group-hover:scale-110 transition-transform"
+                client:load
+              />
+              <div class="text-left leading-tight">
+                <h4 class="text-[9px] xs:text-[10px] sm:text-xs font-black text-white tracking-wider">
+                  Chat Whatsapp
+                </h4>
+                <p class="text-[7.5px] xs:text-[8px] sm:text-[10px] text-green-200 font-medium">
+                  Online Now
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
